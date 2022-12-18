@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./Components/Header";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div id='page'>
+<Header />
+ <nav className = 'wrapper'>
+  <div>
+    Profile
+  </div>
+  <div> 
+    Messages
+  </div>
+  <div>
+News
+  </div>
+  <div>
+Music
+  </div>
+  <div>
+Settings
+  </div>
+ </nav>
+ <main className = 'main'> 
+  <div><img id='backdrop' src='https://abrakadabra.fun/uploads/posts/2021-12/1639251588_2-abrakadabra-fun-p-emodzhi-na-chernom-fone-vse-2.jpg' /></div>
+ <div><img id='avatar' src='https://cdn.shopify.com/s/files/1/0014/2648/9388/products/aniplex-pvc-scale-figures-my-dress-up-darling-marin-kitagawa-swimsuit-ver-1-7-scale-figure-31778866724908_360x.jpg?v=1667515608'/></div>
+ <div>My post
+  <div>New post</div>
+  <div>
+    <div>post1</div>
+    <div>post2</div>
+  </div>
+ </div>
+ </main>
+    </div>);
 }
 
 export default App;
