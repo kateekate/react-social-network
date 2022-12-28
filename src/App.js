@@ -1,39 +1,34 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from "./Components/Header";
+import Dialogues from './Components/Dialogues/Dialogues';
+import Header from "./Components/Header/Header";
+import Music from './Components/Music/Music';
+import Navbar from './Components/Navbar/Navbar';
+import News from './Components/News/News';
+import Profile from './Components/Profile/Profile';
+import Settings from './Components/Settings/Settings';
+import state from './redux/state';
 
-const App = () => {
+const App = (props) => {
   return (
-    <div id='page'>
-<Header />
- <nav className = 'wrapper'>
-  <div>
-    Profile
-  </div>
-  <div> 
-    Messages
-  </div>
-  <div>
-News
-  </div>
-  <div>
-Music
-  </div>
-  <div>
-Settings
-  </div>
- </nav>
- <main className = 'main'> 
-  <div><img id='backdrop' src='https://abrakadabra.fun/uploads/posts/2021-12/1639251588_2-abrakadabra-fun-p-emodzhi-na-chernom-fone-vse-2.jpg' /></div>
- <div><img id='avatar' src='https://cdn.shopify.com/s/files/1/0014/2648/9388/products/aniplex-pvc-scale-figures-my-dress-up-darling-marin-kitagawa-swimsuit-ver-1-7-scale-figure-31778866724908_360x.jpg?v=1667515608'/></div>
- <div>My post
-  <div>New post</div>
-  <div>
-    <div>post1</div>
-    <div>post2</div>
-  </div>
- </div>
- </main>
-    </div>);
+    <BrowserRouter>
+      <div id='page'>
+        <Header />
+        <Navbar state={props.state.navBlockFriends} />
+
+        <div className='pageContent'>
+          <Routes>
+            <Route path='/profile' element={<Profile state={props.state.profilePage} />} />
+            <Route path='/dialogues' element={<Dialogues state={props.state.dialoguesPage} />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/Music' element={<Music />} />
+            <Route path='/Settings' element={<Settings />} />
+          </Routes>
+        </div>
+
+      </div>
+    </BrowserRouter >
+  );
 }
 
 export default App;

@@ -1,0 +1,16 @@
+.header {
+  grid-area: header;
+  align-items: center;
+  display: flex;
+  background-color: #212223;
+  background-image: url("https://img.freepik.com/premium-vector/leopard-print-seamless-leopard-pattern-leopard-spots-abstract-animal-print-vector_319667-260.jpg");
+  background-blend-mode: overlay;
+}
+
+.logo {
+  width: 10vw;
+  max-width: 80px;
+  position: relative;
+  top: 0.1vw;
+  left: 4vw;
+}

@@ -1,0 +1,16 @@
+.post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  gap: 50px;
+  background-color: #61504957;
+
+}
+
+.post img {
+  width: 90px;
+  border: solid 0.5px white;
+  border-radius: 50px;
+}

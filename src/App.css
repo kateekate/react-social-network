@@ -1,43 +1,23 @@
-* {
-  width: 100%;
+html {
+  background-image: url('https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+
 }
 
 #page {
   display: grid;
+  width: 80vw;
+  min-height: 100vh;
+  margin: 0 auto;
   grid-template-areas:
-    'header header header'
-    'wrapper main main'
-    'wrapper main main';
+    'header header'
+    'nav-wrapper main';
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  gap: 15px;
 }
 
-.header {
-  grid-area: header;
-  background-color: goldenrod;
-}
-
-.wrapper {
-  width: 1200px;
-  grid-area: wrapper;
-  width: 15vw;
-  background-color: blueviolet;
-}
-
-.main {
+.pageContent {
   grid-area: main;
-  background-color: crimson;
-  width: 85vw;
-}
-
-#logo {
-  width: 10vw;
-  margin: 32px;
-  transform: scale(-1, 1)
-}
-
-#backdrop {
-  width: ;
-}
-
-#avatar {
-  width: 20vw;
+  background-color: rgba(254, 250, 240, 0.7);
+  padding: 3vw;
 }
