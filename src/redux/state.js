@@ -65,4 +65,12 @@ const state = {
   }
 }
 
+export const addPost = (postMessage) => {
+  const newPost = {
+    contain: postMessage,
+    count: 0,
+  }
+  state.profilePage.posts.push(newPost)
+}
+
 export default state
