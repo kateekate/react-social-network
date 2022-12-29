@@ -7,7 +7,6 @@ const Dialogues = (props) => {
   const dialoguesElements = props.state.dialoguesData.map((dialogue, index) => <DialogueItem name={dialogue.name} id={dialogue.id} key={`message-${index}`} />)
   const messageElements = props.state.messages.map((msg, index) => <Message message={msg.message} key={`message-${index}`} />)
 
-
   return (
     <div className={s.dialogues} >
 
