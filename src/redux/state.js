@@ -5,7 +5,7 @@ import ava4 from './../img/avatars/ava4boy.jpeg'
 import ava5 from './../img/avatars/ava6boy.jpeg'
 
 let rerenderEntireTree = () => {
-  console.log('state changed')
+
 }
 
 let state = {

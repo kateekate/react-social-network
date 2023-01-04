@@ -3,7 +3,6 @@ import s from './MyPosts.module.css'
 import Post from './Post/Post'
 
 const MyPosts = (props) => {
-  console.log(props)
   const postsElements = props.posts.map((p, index) => <Post count={p.count} contain={p.contain} key={`post-${index}`} />)
 
   const newPostElement = React.createRef()
