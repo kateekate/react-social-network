@@ -8,7 +8,7 @@ let rerenderEntireTree = () => {
   console.log('state changed')
 }
 
-const state = {
+let state = {
   profilePage: {
     posts: [
       {

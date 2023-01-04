@@ -9,7 +9,7 @@ import { addPost, updateNewPostText } from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export const rerenderEntireTree = (state) => {
+export const rerenderEntireTree = () => {
   root.render(
     <BrowserRouter>
       <React.StrictMode>
