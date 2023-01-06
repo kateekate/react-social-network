@@ -4,6 +4,9 @@ import ava3 from './../img/avatars/ava3.jpeg'
 import ava4 from './../img/avatars/ava4boy.jpeg'
 import ava5 from './../img/avatars/ava6boy.jpeg'
 
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+
 let store = {
   _state: {
     profilePage: {
@@ -66,28 +69,46 @@ let store = {
       ]
     }
   },
-  getState() {
-    return this._state
-  },
   _callSubscriber() {
     console.log('state changed')
   },
-  addPost() {
-    const newPost = {
-      contain: this._state.profilePage.newPostText,
-      count: 0,
-    }
-    this._state.profilePage.posts.unshift(newPost)
-    this._state.profilePage.newPostText = ''
-    this._callSubscriber(this._state)
-  },
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText
-    this._callSubscriber(this._state)
+
+  getState() {
+    return this._state
   },
   subscribe(observer) {
     this._callSubscriber = observer
+  },
+
+  addPost() {
+
+  },
+  updateNewPostText(newText) {
+
+  },
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      const newPost = {
+        contain: this._state.profilePage.newPostText,
+        count: 0,
+      }
+      this._state.profilePage.posts.unshift(newPost)
+      this._state.profilePage.newPostText = ''
+      this._callSubscriber(this._state)
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.profilePage.newPostText = action.newText
+      this._callSubscriber(this._state)
+    }
   }
+
 }
+
+export const addPostActionCreator = () => ({ type: ADD_POST })
+
+export const updateNewPostTextActionCreator = (text) => ({
+  type: UPDATE_NEW_POST_TEXT,
+  newText: text,
+})
 
 export default store
